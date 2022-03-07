@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map testing</title>
+    <style>
+        
+    </style>
+    <style>
+        *{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+        img {
+            border: 2px solid rgb(100, 100, 100);
+        }
+    </style>
+</head>
+<body>
+    <h1>Using Image map to visualize geometric shapes</h1>
+    <img src="geometrica.jpg" alt="Geometric shapes" usemap="#geometric-map">
+    <map name="geometric-map">
+        <area shape="rect" coords="105,43, 186,124" href="#" alt="Square" title="Square">
+        <area shape="poly" coords="265,94, 339,94, 366,17, 290,17" href="#" alt="Parallelogram" title="Parallelogram">
+        <area shape="poly" coords="85,165, 137,245, 84,324, 30,245" href="#" alt="Diamond" title="Diamond">
+        <area shape="poly" coords="240,238, 242,132, 144,187" href="#" alt="Triangle" title="Triangle">
+        <area shape="poly" coords="173,280, 230,280, 260,335, 232,393, 172,393, 144,336" href="#" alt="Hexagon" title="Hexagon">
+        <area shape="poly" coords="445,240, 588,393, 445,393" href="#" alt="Traingle" title="Triangle">
+        <area shape="poly" coords="440,216, 578,216, 617,175, 617,64, 475,64, 442,100" href="#" alt="Cube" title="Cube">
+        <!--The way I did the Cylinder before
+        <area shape="rect" coords="290,135, 385,280" href="#" alt="Cylinder" title="Cylinder">
+        <area shape="poly" coords="287,283, 296,293, 309,299, 321,302, 344,303, 361,302, 378,293, 387,283" href="#" alt="Cylinder" title="Cylinder">
+        <area shape="poly" coords="288,141, 306,125, 321,123, 337,120, 350,121, 370,125, 388,141" href="#" alt="Cylinder" title="Cyliinder">
+        End of Cylinder-->
+        
+        <!--This was the best way I've found to cover the cylinder. Using Poligons (poly) and a rectangle (rect), as the Rectangle fills the most part of the cylinder and then the other polygons complete
+        
+        Side note: Not anymore, as soon as I was writing that, I've noticed I don't need a rect on the middle of the cylinder, so I grabbed the coords of the two polys and  merged them, and the result is now below
+        -->
+        <area shape="poly" coords="288,141, 306,125, 321,123, 337,120, 350,121, 370,125, 388,141, 387,283, 378,293, 361,302, 344,303, 321,302, 309,299, 296,293, 287,283," href="#" alt="Cylinder" title="Cylinder">
+    </map>
+</body>
+</html>
